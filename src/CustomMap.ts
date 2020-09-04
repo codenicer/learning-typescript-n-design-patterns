@@ -1,8 +1,10 @@
-interface Mappable {
+export interface Mappable {
   location: {
     lat: number
     lng: number
   }
+
+  markerContent(): string
 }
 
 export class CustomMap {
@@ -26,9 +28,10 @@ export class CustomMap {
         lng: mappable.location.lng,
       },
     })
+
     marker.addListener('click', () => {
       const infoWindow = new google.maps.InfoWindow({
-        content: 'Im Here!!!',
+        content: `Im Here!!! , ${mappable.markerContent()}`,
       })
       infoWindow.open(this.googleMap, marker)
     })
