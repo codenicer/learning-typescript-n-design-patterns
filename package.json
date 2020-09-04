@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@types/faker": "^4.1.12",
+    "faker": "^5.1.0",
     "parcel-bundler": "^1.12.4"
   },
   "devDependencies": {
